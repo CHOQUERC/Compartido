@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <title> {{titulo}} </title>
+</head>
+<body>
+    <header>
+    </header>
+    <section>
+        <ul>
+        {% for usuario in usuarios %}
+            <li> {{usuario.username}} <em> {{usuario.email}} </em> 
+            <ul>
+                {% for receta in recetas %}
+                    {% if receta.usuario == usuario %}
+                    <li>{{receta}}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>

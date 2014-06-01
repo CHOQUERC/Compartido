@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> {{titulo}} </title>
+</head>
+<body>
+    <header>
+    </header>
+    <section>
+        <ul>
+            {% for receta in recetas %}
+            <li>
+            <a href='/receta/{{receta.id}}'>{{receta}}</a>
+                <br>
+                <img src='{{MEDIA_URL}}{{receta.imagen}}'>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
