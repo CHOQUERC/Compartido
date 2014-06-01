@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block titulo %} {% endblock %}</title>
+        <style> 
+            {% block stype_css %}
+               img {width: 100px}
+            {% endblock %}
+        </style>
+    </head>
+    <body>
+        <header>
+            {% block encabezado %}{% endblock %}
+            <nav>
+                <ul>
+                    <li> <a href="/">Inicio</a> </li>
+                    <li> <a href="/usuarios">Usuarios Registrados</a> </li>
+                    <li> <a href="/recetas">Recetas</a> </li>
+                    <li> <a href="/sobre">Sobre</a> </li>
+                </ul>
+        </header>
+        <section>
+            {% block contenido %}
+
+            {% endblock %}
+        </section>
+        <footer>
+            <p>Proyecto Receta Copyleft</p>
+        </footer>
+</html>

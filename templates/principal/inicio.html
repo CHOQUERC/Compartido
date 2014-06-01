@@ -1,21 +1,13 @@
-<!DOCTYPE = html>
+{% extends 'base.html' %}
 
-<html>
-  <head>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li> <a href="/">Inicio </a>  </li>
-          <li> <a href="/usuarios">Usuarios Registrados </a>  </li>
-          <li> <a href="/recetas">Recetas </a>  </li>
-          <li> <a href="/sobre">Sobre </a>  </li>
-        </ul>
-      </nav>
-    </header>
-       
-    <section>
+{% block titulo %}
+Inicio
+{% endblock %}
+
+{% block style_css  %}
+{% endblock style_css %}
+
+{% block contenido %}
        <h1> Recetario </h1>
        <p>Actualmente tenemos registrado: </p>
        <ul>
@@ -23,6 +15,4 @@
          <li> {{ receta.titulo }} </li>
          {% endfor %}
        </ul>
-    </section>
-  </body>
-</html>
+{% endblock %}

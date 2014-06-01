@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-
-<html lang="es">
-<head>
-    <meta charset="UTF-8"> 
-    <title> {{titulo}} </title>
-</head>
-<body>
-    <header>
-    </header>
-    <section>
-        <ul>
+{% extends 'base.html' %}
+{% block titulo %} Usuarios Registrados {% endblock %}
+{% block contenido %}
+    <ul>
         {% for usuario in usuarios %}
-            <li> {{usuario.username}} <em> {{usuario.email}} </em> 
+        <li> {{usuario.username}} <em> {{usuario.email}} </em> 
             <ul>
                 {% for receta in recetas %}
                     {% if receta.usuario == usuario %}
                     <li>{{receta}}</li>
                     {% endif %}
-                {% endfor %}
+                    {% endfor %}
             </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </section>
-</body>
-</html>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
