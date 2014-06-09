@@ -3,8 +3,11 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 # Importar lo modelos
 from principal.models import Comentario, Receta
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
+from principal.forms import RecetaForm
+from django.contrib.auth.forms import UserCreationForm
+from principal.forms import ComentarioForm
 
 # Crear una vista de ejemplo sobre:
 
@@ -41,4 +44,39 @@ def Detalle_Receta(request, id_receta):
      return render_to_response('principal/detalle.html',
                                {'receta': dato, 'comentarios': comentarios})
 
+def nueva_receta(request):
+    # POST: Es una coleccion de dato que envía
+    if request.method == 'POST':
+        formulario = RecetaForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return HttpResponseRedirect('/')
+    else:
+        formulario = RecetaForm()
+    return render_to_response('principal/recetaform.html',
+                              {'formulario': formulario},
+                              context_instance=RequestContext(request))
 
+def nuevo_usuario(request):
+    if request.method == 'POST':
+        formulario = UserCreationForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return HttpResponseRedirect('/')
+    else:
+        formulario = UserCreationForm()
+    return render_to_response('principal/nuevousuario.html',
+                              {'formulario': formulario},
+                              context_instance=RequestContext(request))
+
+def Comentarios(request):
+    if request.method == 'POST':
+        comenta = ComentarioForm(request.POST)
+        if comenta.is_valid():
+            comenta.save()
+            return HttpResponseRedirect('/')
+    else:
+        comenta = ComentarioForm()
+    return render_to_response('principal/nuevocomentario.html',
+                              {'comenta': comenta},
+                              context_instance=RequestContext(request))

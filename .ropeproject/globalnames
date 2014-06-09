@@ -1,1 +1,7 @@
-€}q(Uprincipal.views]q(UDetalle_RecetaqURecetasqUSobreqUInicioqUUsuariosqeUrecetario.urls]qUurlpatternsq	aUprincipal.admin]u.
+€}q(Uprincipal.views]q(Unueva_recetaqUDetalle_RecetaqURecetasqUnuevo_usuarioqUComentariosqUSobreqUInicioq	UUsuariosq
+eUprincipal.models]q(URecetaqUBebidaqU
+ComentarioqeUprincipal.admin]Urecetario.urls]qUurlpatternsqaUrecetario.settings]q(UTEMPLATE_DIRSqUUSE_L10NqULANGUAGE_CODEqUUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqU
+MEDIA_ROOTqUROOT_URLCONFqU	MEDIA_URLqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGq UALLOWED_HOSTSq!U
+SECRET_KEYq"UINSTALLED_APPSq#USTATICFILES_DIRSq$UBASE_DIRq%eUprincipal.forms]q&(UComentarioFormq'U
+RecetaFormq(eu.

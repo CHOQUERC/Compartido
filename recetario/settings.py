@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'principal',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,12 +85,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 # Media Root almacenará imágenes
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-print "MEDIA_ROOT --> %s" % MEDIA_ROOT
 
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/'
 # Templates dirs, contiene los html de las aplicaciones
 
 TEMPLATE_DIRS = (

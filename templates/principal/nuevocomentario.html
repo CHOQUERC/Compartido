@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block titulo %}Comentario Nuevo{% endblock %}
+
+{% block contenido %}
+<h1>Comentario Nuevo</h1>
+<form method='post'>{% csrf_token %}
+    <table>{{comenta.as_p}}</table>
+    <p><input type='submit' value='Guardar'/></p>
+</form>
+{% endblock %}
